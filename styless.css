@@ -1,0 +1,349 @@
+/*body{
+    counter-reset: game;
+}
+
+
+*/
+
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    counter-reset: score;
+    font-family: "Quicksand", sans-serif;
+}
+
+.phone{
+    position: relative;
+    border: 8px solid purple;
+    border-radius: 40px;
+    height: 600px;
+    width: 300px;
+    background-color: #94dbfd;
+    box-shadow: 0 19px 38px rgb(0, 0, 0, 0.30), 0 15px 12px rgb(0, 0, 0, 0.22);
+}
+
+.message {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.score-text {
+    color: rgb(241, 108, 241);
+    font-size: 1.5em;
+}
+
+.message-text {
+    display: none;
+    color: rgb(241, 108, 241);
+    font-size: 1.5em;
+}
+
+.kuromi{
+    width: 80px;
+}
+
+.layer-1{
+    position: absolute;
+    z-index: 1;
+    height: 492px;
+    width: 80px;
+    bottom: 0;
+    right: 60px;
+    background: none;
+    border: none;
+    animation-name: kuromi1;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+input[type=checkbox]{
+    position: absolute;
+    appearance: none;
+    cursor: pointer;
+    z-index: 1;
+    width: 100%;
+    height: 80px;
+}
+
+input:checked{
+    counter-increment: score;
+}
+
+.score::after{
+    content: counter(score)
+}
+
+@keyframes kuromi1 {
+    0%{
+        bottom: 0;
+    }
+    25%{
+        bottom: -80px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+
+.layer-2{
+    position: absolute;
+    z-index: 2;
+    height: 492px;
+    width: 80px;
+    background: white;
+    bottom: 0;
+    left: 60px;
+    background: none;
+    border: none;
+    animation-name: kuromi2;
+    animation-duration: 0.5s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes kuromi2 {
+    0%{
+        bottom: 0;
+    }
+    25%{
+        bottom: -100px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+.layer-3{
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 400px;
+    background: #d46b4e;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 19px 38px rgb(0, 0, 0, 0.30), 0 15px 12px rgb(0, 0, 0, 0.22);
+
+}
+
+.grass:after{
+    content: "";
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    height: 30px;
+    background: linear-gradient(135deg, #128b12 25%, transparent 25%) -50px 0,
+                linear-gradient(-135deg, #128b12 25%, transparent 25%) -50px 0,
+                linear-gradient(45deg, #128b12 25%, transparent 25%),
+                linear-gradient(-45deg, #128b12 25%, transparent 25%);
+    background-size: 30px 80px;
+    border-radius: 20px;
+}
+.grass::before {
+    content: "";
+    position: absolute; 
+    /* left: -0px; */
+    top: 15px;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(135deg, #a6543d 25%, transparent 25%) -50px 0,
+                linear-gradient(-135deg, #a6543d 25%, transparent 25%) -50px 0,
+                linear-gradient(45deg, #a6543d 25%, transparent 25%),
+                linear-gradient(-45deg, #a6543d 25%, transparent 25%);
+    background-size: 30px 100px;
+    background-position: 140px 0 0 30px 0;
+}
+
+.layer-4{
+    position: absolute;
+    z-index: 4;
+    height: 380px;
+    width: 80px;
+    background: white;
+    bottom: 0;
+    left: 50px;
+    background: none;
+    border: none;
+    animation-name: kuromi3;
+    animation-duration: 2s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes kuromi3 {
+    0%{
+        bottom: 0;
+    }
+    25%{
+        bottom: -200px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+.layer-5{
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    width: 220px;
+    height: 290px;
+    background: #d46b4e;
+    border-bottom-left-radius: 40px;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 19px 38px rgb(0, 0, 0, 0.30), 0 15px 12px rgb(0, 0, 0, 0.22);
+}
+
+.layer-6{
+    position: absolute;
+    z-index: 6;
+    height: 270px;
+    width: 80px;
+    background: white;
+    bottom: 0;
+    right: 40px;
+    background: none;
+    border: none;
+    animation-name: kuromi4;
+    animation-duration: 0.5s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes kuromi4 {
+    0%{
+        bottom: 0;
+    }
+    25%{
+        bottom: -80px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+.layer-7{
+    position: absolute;
+    z-index: 7;
+    right: 0;
+    width: 170px;
+    height: 180px;
+    background: #d46b4e;
+    border-bottom-right-radius: 30px;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 19px 38px rgb(0, 0, 0, 0.30), 0 15px 12px rgb(0, 0, 0, 0.22);
+
+}
+
+.layer-8{
+    position: absolute;
+    z-index: 8;
+    width: 60%;
+    height: 20%;
+    bottom: 0;
+    right: 20%;
+}
+
+.layer-8::before{
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 70%;
+    bottom: 0;
+    left: 0;
+    background: #67A167;
+    border-radius: 100px 100px 10px 20px;
+}
+.layer-8::after{
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 70%;
+    bottom: 0;
+    right: 0;
+    background: #67A167;
+    border-radius: 100px 100px 10px 20px;
+}
+.medium{
+    position: absolute;
+    width: 40%;
+    height: 90%;
+    bottom: 0;
+    left: 30%;
+    background: #67A167;
+    border-radius: 100px 100px 10px 20px;
+}
+
+.layer-9{
+    position: absolute;
+    z-index: 9;
+    width: 40%;
+    height: 17%;
+    bottom: 0;
+    left: 0%;
+}
+.layer-9::before{
+    position: absolute;
+    content: "";
+    width: 75%;
+    height: 100%;
+    background: white;
+    border-radius: 100px 100px 10px 20px;
+    box-shadow: 0 19px 38px rgb(0, 0, 0, 0.30), 0 15px 12px rgb(0, 0, 0, 0.22);
+}
+.layer-9::after{
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 60%;
+    bottom: 0;
+    right: 0;
+    background: white;
+    border-radius: 100px;
+}
+
+.layer-10{
+    position: absolute;
+    z-index: 10;
+    width: 40%;
+    height: 17%;
+    bottom: 0;
+    right: 0%;
+}
+
+.layer-10::before{
+    position: absolute;
+    content: "";
+    width: 75%;
+    height: 100%;
+    right: 0;
+    background: white;
+    border-radius: 100px 100px 30px 20px;
+    box-shadow: 0 19px 38px rgb(0, 0, 0, 0.30), 0 15px 12px rgb(0, 0, 0, 0.22);
+
+}
+.layer-10::after{
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 60%;
+    bottom: 0;
+    left: 0;
+    background: white;
+    border-radius: 100px;
+}
